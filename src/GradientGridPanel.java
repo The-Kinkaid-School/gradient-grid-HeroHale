@@ -77,13 +77,72 @@ public class GradientGridPanel extends JPanel
      * --> This should return true for the default case and return false for the bad examples. <--
      * @return whether all cells containing values 1-254 meet this requirement.
      */
+    public boolean isOutOfBounds(int row, int col)
+    {
+        if(row >= 0 && row < GRID_SIZE && col >= 0 && col < GRID_SIZE)
+        {
+            return false;
+        }
+        else return true;
+    }
+
     public boolean confirmGridMeetsSpecifications()
     {
         // suggested variable to track whether you have duplicate numbers in the grid. This defaults to all falses.
         boolean[] used = new boolean[GRID_SIZE * GRID_SIZE];
-
         //TODO: you write this method.
-        return false;
+
+        boolean isGridGood = false;
+
+        for(int row = 0; row < GRID_SIZE; row++)
+        {
+            for(int col = 0; col < GRID_SIZE; col++)
+            {
+                isGridGood = false;
+                if(isOutOfBounds(row-1, col-1) == false && myGrid[row-1][col-1] == myGrid[row][col] + 1) // is top left diagonal the difference of 1 to my grid's row and col positions
+                {
+//                    System.out.println("top left diagonal good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row-1, col) == false && myGrid[row-1][col] == myGrid[row][col] + 1) // top middle
+                {
+//                    System.out.println("top middle good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row-1, col+1) == false && myGrid[row-1][col+1] == myGrid[row][col] + 1) // top right diagonal
+                {
+//                    System.out.println("top right diagonal good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row, col-1) == false && myGrid[row][col-1] == myGrid[row][col] + 1) // left
+                {
+//                    System.out.println("left good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row, col+1) == false && myGrid[row][col+1] == myGrid[row][col] + 1) // right
+                {
+//                    System.out.println("right good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row+1, col-1) == false && myGrid[row+1][col-1] == myGrid[row][col] + 1) // bottom left diagonal
+                {
+//                    System.out.println("bottom left diagonal good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row+1, col) == false && myGrid[row+1][col] == myGrid[row][col] + 1) // bottom middle
+                {
+//                    System.out.println("bottom middle good");
+                    isGridGood = true;
+                }
+                if(isOutOfBounds(row+1, col+1) == false && myGrid[row+1][col+1] == myGrid[row][col] + 1) // bottom right diagonal
+                {
+//                    System.out.println("bottom right diagonal good");
+                    isGridGood = true;
+                }
+            }
+        } // end of for loop
+
+        return isGridGood;
     }
 
     /**
@@ -104,10 +163,10 @@ public class GradientGridPanel extends JPanel
                 makeAnotherBadExample();
                 break;
             case 3:
-                // TODO write code for case 2, either here or in its own method.
+                // TODO write code for case 3, either here or in its own method.
                 break;
             case 4:
-                // TODO write code for case 3, either here or in its own method.
+                // TODO write code for case 4, either here or in its own method.
                 break;
             // you may add more cases, if you wish!
         }
