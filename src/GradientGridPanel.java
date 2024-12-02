@@ -164,10 +164,10 @@ public class GradientGridPanel extends JPanel
                 break;
             case 3:
                 // TODO write code for case 3, either here or in its own method.
-                break;
+                createCase3();
             case 4:
                 // TODO write code for case 4, either here or in its own method.
-                break;
+                createCase4();
             // you may add more cases, if you wish!
         }
     }
@@ -175,6 +175,34 @@ public class GradientGridPanel extends JPanel
     /**
      * an example of a loop structure that fills in all the cells but does not meet the criteria.
      */
+    private void createCase3()
+    {
+        // set up
+        myGrid = new int[GRID_SIZE][GRID_SIZE];
+        int num_rows = GRID_SIZE;
+        int middle = num_rows / 2; // 16 / 2 = 8 (which is the middle)
+        myGrid[middle][middle] = 0; // sets middle to be zero
+        // loop to spiral around zero
+        for(int row = 0; row < GRID_SIZE; row ++)
+        {
+            for(int col = 0; col < GRID_SIZE; col ++)
+            {
+                // Question for next time:
+                // Do I define what the first & second "[ ]" are? and if so am I incorrectly defining them on line 194?
+                // EX: is [middle] [middle] the same thing as doing [row] [col], so do I define that, or is that universally the case for all 2d arrays?
+                //      row       col
+                myGrid[middle-1][middle-1] = myGrid[middle][middle] + 1;
+                myGrid[middle]
+            }
+
+        }
+
+    }
+
+    private void createCase4()
+    {
+
+    }
     private void makeBadExample()
     {
         int counter = 0;
