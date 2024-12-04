@@ -180,23 +180,16 @@ public class GradientGridPanel extends JPanel
         // set up
         myGrid = new int[GRID_SIZE][GRID_SIZE];
         int num_rows = GRID_SIZE;
-        int middle = num_rows / 2; // 16 / 2 = 8 (which is the middle)
-        myGrid[middle][middle] = 0; // sets middle to be zero
-        // loop to spiral around zero
-        for(int row = 0; row < GRID_SIZE; row ++)
+        int blc = GRID_SIZE - 1;
+        myGrid[blc][blc] = 30;
+        int counter = 0;
+
+        for(int i = 0; i < GRID_SIZE; i++)
         {
-            for(int col = 0; col < GRID_SIZE; col ++)
-            {
-                // Question for next time:
-                // Do I define what the first & second "[ ]" are? and if so am I incorrectly defining them on line 194?
-                // EX: is [middle] [middle] the same thing as doing [row] [col], so do I define that, or is that universally the case for all 2d arrays?
-                //      row       col
-                myGrid[middle-1][middle-1] = myGrid[middle][middle] + 1;
-                myGrid[middle]
-            }
-
+            counter += 1;
+            System.out.println(STR."Setting myGrid[\{blc-i}][\{blc}] to be \{counter}.");
+            myGrid[blc-i][blc] = counter;
         }
-
     }
 
     private void createCase4()
