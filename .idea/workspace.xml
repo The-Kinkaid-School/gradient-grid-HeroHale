@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a23e66c-010e-40e6-b64b-1f45d21b353d" name="Changes" comment="Moved on from doing spiral. Instead, snaking up and down from the bottom left corner to the top right corner. Move from bottom left to top left corner completed.">
+    <list default="true" id="4a23e66c-010e-40e6-b64b-1f45d21b353d" name="Changes" comment="Goes from bottom right corner to top right corner, moves the column to the left by one and then goes down to the bottom of the row.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GradientGridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GradientGridPanel.java" afterDir="false" />
     </list>
@@ -103,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733332910645</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Goes from bottom right corner to top right corner, moves the column to the left by one and then goes down to the bottom of the row.">
+      <option name="closed" value="true" />
+      <created>1733499135990</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733499135990</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +129,7 @@
     <MESSAGE value="TODO 1 Completed, confirmGridMeetsSpecifications method is working" />
     <MESSAGE value="Progress on case 3. Initial set up for a spiral should be working" />
     <MESSAGE value="Moved on from doing spiral. Instead, snaking up and down from the bottom left corner to the top right corner. Move from bottom left to top left corner completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved on from doing spiral. Instead, snaking up and down from the bottom left corner to the top right corner. Move from bottom left to top left corner completed." />
+    <MESSAGE value="Goes from bottom right corner to top right corner, moves the column to the left by one and then goes down to the bottom of the row." />
+    <option name="LAST_COMMIT_MESSAGE" value="Goes from bottom right corner to top right corner, moves the column to the left by one and then goes down to the bottom of the row." />
   </component>
 </project>
