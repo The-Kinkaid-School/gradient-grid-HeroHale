@@ -180,15 +180,24 @@ public class GradientGridPanel extends JPanel
         // set up
         myGrid = new int[GRID_SIZE][GRID_SIZE];
         int num_rows = GRID_SIZE;
-        int blc = GRID_SIZE - 1;
-        myGrid[blc][blc] = 30;
+        int brc = GRID_SIZE - 1; // bottom right corner
+        int trc = GRID_SIZE - 1; // top right corner
+        System.out.println(trc);
+        myGrid[brc][brc] = 30;
         int counter = 0;
 
         for(int i = 0; i < GRID_SIZE; i++)
         {
+            myGrid[brc-i][brc] = counter;
             counter += 1;
-            System.out.println(STR."Setting myGrid[\{blc-i}][\{blc}] to be \{counter}.");
-            myGrid[blc-i][blc] = counter;
+            System.out.println(STR."Setting myGrid[\{brc-i}][\{brc}] to be \{counter}.");
+        }
+        brc--;
+        for(int i = GRID_SIZE - 1; i > -1; i--)
+        {
+            myGrid[trc-i][brc] = counter;
+            counter += 1;
+            System.out.println(STR."Setting myGrid[\{brc-i}][\{brc}] to be \{counter}.");
         }
     }
 
